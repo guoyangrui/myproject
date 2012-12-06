@@ -1,0 +1,34 @@
+<?php $this->tab = $this->action('index', $this->tabName, 'default', array('guid' => $this->guid)); ?>
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>User</b> and script/action name <b>view</b></p>
+	<?php echo $this->firstName . ' ' . $this->lastName;?>
+	    <br />
+	    <a href=<?php echo $this->baseUrl() . '/user/view/guid/' . $this->guid . '/tab/profile';?>>Profile</a>
+	    <a href=<?php echo $this->baseUrl() . '/user/view/guid/' . $this->guid . '/tab/status';?>>Status</a>	 
+	    <a href=<?php echo $this->baseUrl() . '/user/view/guid/' . $this->guid . '/tab/relationship'?>>Friends</a>   
+	    <a href=<?php echo $this->baseUrl() . '/user/view/guid/' . $this->guid . '/tab/document'?>>My Stuff</a>   
+	    
+	    <?php //echo $this->ajaxLink("Create", $this->baseUrl() . '/user/view', 
+	    		//array('guid' => $this->guid, 'tab' => 'profile')); ?>
+	<?php if (null != $this->relationship)
+	          {
+	              if (2 == $this->relationship) {?>
+	                 <a href=<?php echo $this->baseUrl() . '/relationship/request/guid/' . $this->guid;?>>Add Friend</a>
+	              <?php } else if (0 == $this->relationship) {?>
+	                 <a>Pending Request</a>
+	              <?php } else if (-1 == $this->relationship) {?>
+	                  <a>Sorry, you've been blocked by this user.</a>
+	              <?php }
+	          }
+	       echo $this->tab;
+	       
+	       if (null == $this->tabName) {?>
+	       
+	       	<a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->guid . '&tab=status&display=thing';?>>Everything</a>
+	<a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->guid . '&tab=status&display=action';?>>Actions</a>
+	       <?php 
+	           echo $this->partialLoop('partial/_status-row.phtml', $this->stream);
+	       }
+    ?>
+</div>

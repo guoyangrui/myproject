@@ -1,0 +1,13 @@
+<br />
+<tr>
+    <td class='links'>
+        <a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->SUBJECTID;?>><?php echo $this->SUBJECT_FN . ' ' . $this->SUBJECT_LN; ?></a>
+        <a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->SUBJECTID . '&verbid=' . $this->VERBID . '&tab=status';?>><?php echo $this->VERB; ?></a>        
+        <a href=<?php if (null != $this->AUTHORID) {
+        echo  $this->baseUrl() . '/user/view/guid/' . $this->AUTHORID;?>><?php echo $this->AUTHOR_FN . ' ' . $this->AUTHOR_LN; ?></a>'s
+        <a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->SUBJECTID . '&classid=' . $this->CLASSID; ?>><?php echo $this->CLASSNAME;?></a>
+        <a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->SUBJECTID . '&docid=' . $this->OBJECTID . '&tab=document'; ?>><?php echo $this->TITLE;?></a><br />
+        <p><?php echo $this->COMPLEMENT;?></p>
+        <?php }?>     
+    </td>
+</tr>

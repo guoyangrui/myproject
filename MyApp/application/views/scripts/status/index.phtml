@@ -1,0 +1,16 @@
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>Status</b> and script/action name <b>index</b></p>
+	<a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->guid . '&tab=status&display=thing';?>>Everything</a>
+	<a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->guid . '&tab=status&display=action';?>>Actions</a>
+	<?php if ('thing' == $this->display) {
+		echo $this->partialLoop('partial/_class-row.phtml', $this->list);		
+	}
+	else if ('action' == $this->display ) {
+        echo $this->partialLoop('partial/_verb-row.phtml', $this->list);
+    }
+	else
+	{	
+	    echo $this->partialLoop('partial/_status-row.phtml', $this->stream);
+    }?>
+</div>

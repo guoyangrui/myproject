@@ -1,0 +1,56 @@
+<html>
+<head>
+    <?php
+    echo $this->headMeta();
+    echo $this->headTitle();
+    echo $this->headScript();
+    $this->headLink()->appendStylesheet($this->baseUrl(). '/css/layout.css');
+    echo $this->headLink();
+    echo $this->jQuery()->enable()->uiEnable()->
+    setLocalPath($this->baseUrl(). '/js/jquery-1.7.2.min.js')->setUiLocalPath($this->baseUrl(). '/js/jquery-ui-1.8.22.custom.min.js')->
+    addStylesheet($this->baseUrl(). '/css/ui-lightness/jquery-ui-1.8.22.custom.css');
+    ?>
+</head>
+<body>
+    <div id="contentWrapper">
+        <div id="header">
+            <h1>Welcome to SQuery</h1>
+        </div> 
+        <div id="navigation">
+            <?php echo $this->layout()->navigation;?> 
+            <ul>
+                <li><a href="<?php echo $this->url(
+                array('controller' => 'index'), 'default', true) ?>"
+                >Home</a></li>
+                <li><a href="<?php echo $this->url(
+                array('controller' => 'user', 'action' => 'view'), 'default', true) ?>"
+                >My Info</a></li>
+                <li><a href="<?php echo $this->url(
+                array('controller' => 'user', 'action' => 'list'), 'default', true) ?>"
+                >Find User</a></li>
+            </ul>            
+        </div>
+        <div id="welcome">
+            <?php echo $this->action('login', 'user');?>
+        </div>
+        <div id="search">
+            <?php echo $this->layout()->search;?>
+        </div>
+        <div id="calendar">
+            <?php echo $this->layout()->calendar;?>
+        </div>
+        <div id="leftSidebar">
+            <?php echo $this->layout()->leftSidebar;?>
+        </div>
+        <div id="rightSiderbar">
+            <?php echo $this->layout()->rightSidebar;?>        
+        </div>
+        <div id='main'>
+            <?php echo $this->layout()->content;?>
+        </div>
+        <div id="footer">
+            <?php $this->layout()->footer = 'Copyright © Yangrui Guo'; echo $this->layout()->footer;?>
+        </div>
+    </div>
+</body>
+</html>

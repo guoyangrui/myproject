@@ -1,0 +1,20 @@
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>Document</b> and script/action name <b>index</b></p>
+	<a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->guid . '&tab=document&action=browse'?>>Browse</a>
+	<a href=<?php echo $this->baseUrl() . '/user/view?guid=' . $this->guid . '&tab=document&action=create'?>>Create</a>
+	<?php if ('browse' == $this->action) {
+		echo $this->partialLoop('partial/_document-row.phtml', $this->list);
+	}		
+	 else if ('create' == $this->action) {
+	//echo $this->action($this->action, 'document', 'default', array('guid' => $this->guid));
+	    echo $this->action('create', 'document');
+	} 
+	 if (null != $this->docid) { ?><br />
+	 <?php echo $this->document->TITLE;?><br />
+	 	 <?php echo $this->document->FIRSTNAME . ' ' . $this->document->LASTNAME;?><br />
+	 	 <?php echo $this->document->CONTENT;?><br />
+	 	 <?php echo $this->action('create', 'status');
+    }
+	 ?>       
+</div>

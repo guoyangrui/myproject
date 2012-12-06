@@ -1,0 +1,15 @@
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>User</b> and script/action name <b>login</b></p>
+		<h2>My Account</h2>
+	<?php if (null == $this->identity) 
+	          { 
+	              if ($this->loginMessage) 
+                      { echo $this->loginMessage;}
+                  echo $this->form;
+	          }
+	      else {?>	
+	    <p>Welcome back, <?php echo $this->identity->FIRSTNAME; ?></p>
+	    <a href=<?php echo $this->baseUrl() . '/user/logout';?>>Log out</a>
+	<?php } ?>	
+</div>
