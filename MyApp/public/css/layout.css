@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+
+a:link,
+a:visited
+    {
+        color: #0398CA;
+    }
+
+span#zf-name
+    {
+        color: #91BE3F;
+    }
+    
+div#more-information
+    {
+        background-image: url(http://framework.zend.com/images/bkg_body-bottom.gif);
+        height: 100%;
+    }
+    
+body {
+	font-size: 10px;
+}
+
+* {
+	margin: 0 ;
+    padding: 0;
+}
+
+p {
+	padding: .5em;
+	font-size: 1.2em;
+}
+
+
+
+#contentWrapper {
+	background-color:#999;
+	overflow:hidden;
+	padding: 0px;
+	margin: 6px 0.5%;
+}
+
+
+#header {
+	background: #FFF;
+	height: 7.5em;
+	margin: 0 0 .5em 0;/
+}
+
+#welcome {
+	background: #FFF;
+	height: 15em;
+	margin: 0 0.5em 0;
+}
+
+#s {
+	background: #FFF;
+	height: 4.5em;
+	margin: 0 0 .5em 0;
+}
+
+#navigation{
+	position: absolute;
+	right: 0px;
+	width: 350px;
+	white-space: nowrap;
+	top:0px;
+}
+
+
+#main {
+	background: #FFF;
+	height: 150em;
+	margin: 0 0 .5em 0;
+}
+
+
+#footer {
+	clear: both;
+	background: #FFF;
+	height: 2.5em;
+	margin: 0;
+}
+
+h1 {
+	color: FF0000;
+}
